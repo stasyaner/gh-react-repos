@@ -31,7 +31,7 @@ export async function getRepos(): Promise<GhRepository[]> {
         variables: {
             query: "react",
             type: GhSearchType.Repository,
-            first: 20,
+            first: 100,
         },
     };
 
