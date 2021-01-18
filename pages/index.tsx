@@ -1,6 +1,21 @@
 import Head from "next/head";
+import {
+    useEffect,
+    useState,
+} from "react";
+import { Repository as GhRepository } from "../model/gqlSchemaGenerated";
+import { getRepos } from "../service/service";
 
 const Home: React.FC = () => {
+    const [repos, setRepos] = useState<GhRepository[]>([]);
+
+    useEffect(() => {
+        void (async function(): Promise<void> {
+            const reposRes = await getRepos();
+            setRepos(reposRes);
+        })();
+    }, []);
+
     return (
         <>
             <Head>
@@ -10,11 +25,17 @@ const Home: React.FC = () => {
 
             <main className="container my-5">
                 <ul>
-                    <li>
-                        <a href="#">react</a> - {" "}
-                        <span role="img" aria-label="star">🌟</span> 999 - {" "}
-                        <span role="img" aria-label="fork">🍴</span> 999
-                    </li>
+                    {
+                        repos.map(r => (
+                            <li key={r.id}>
+                                {typeof r.url === "string" ?
+                                    (<a href={r.url}>{r.name}</a>)
+                                    : r.name} - {" "}
+                                <span role="img" aria-label="star">🌟</span> {r.stargazerCount} - {" "}
+                                <span role="img" aria-label="fork">🍴</span> {r.forkCount}
+                            </li>
+                        ))
+                    }
                 </ul>
             </main>
         </>
