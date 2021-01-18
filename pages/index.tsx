@@ -11,7 +11,7 @@ import {
     Pagination,
 } from "../components";
 import { REPOS_PER_PAGE } from "../model/constants";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 const Home: React.FC = () => {
     const router = useRouter();
