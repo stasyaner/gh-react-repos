@@ -1,0 +1,7 @@
+# graphql-codegen config file for generating ts types from graphql schema
+schema: model/schema.graphql
+generates:
+    gqlSchemaGenerated.ts:
+        - typescript
+config:
+    skipTypename: true
