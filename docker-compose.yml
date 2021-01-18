@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  gh-react-repos:
+    container_name: gh-react-repos
+    image: gh-react-repos
+    networks:
+      - gh-react-repos-net
+    build:
+      context: .
+      args:
+        GH_TOKEN: ${GH_TOKEN}
+    ports:
+      - 3412:3000
+networks:
+  gh-react-repos-net:
+    name: gh-react-repos-net
