@@ -1,10 +1,14 @@
-import Head from "next/head";
 import {
     useEffect,
     useState,
 } from "react";
 import { Repository as GhRepository } from "../model/gqlSchemaGenerated";
 import { getRepos } from "../service/service";
+import {
+    Head,
+    Container,
+    RepoList,
+} from "../components";
 
 const Home: React.FC = () => {
     const [repos, setRepos] = useState<GhRepository[]>([]);
@@ -18,26 +22,10 @@ const Home: React.FC = () => {
 
     return (
         <>
-            <Head>
-                <title>Github react repos</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
-            <main className="container my-5">
-                <ul>
-                    {
-                        repos.map(r => (
-                            <li key={r.id}>
-                                {typeof r.url === "string" ?
-                                    (<a href={r.url}>{r.name}</a>)
-                                    : r.name} - {" "}
-                                <span role="img" aria-label="star">🌟</span> {r.stargazerCount} - {" "}
-                                <span role="img" aria-label="fork">🍴</span> {r.forkCount}
-                            </li>
-                        ))
-                    }
-                </ul>
-            </main>
+            <Head />
+            <Container>
+                <RepoList repos={repos} />
+            </Container>
         </>
     );
 };
