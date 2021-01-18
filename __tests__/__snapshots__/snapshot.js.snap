@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing renders home page 1`] = `
+<main
+  className="container my-5"
+>
+  <ul>
+    <li>
+      <a
+        href="https://github.com/facebook/react"
+      >
+        react
+      </a>
+       - 
+       
+      <span
+        aria-label="star"
+        role="img"
+      >
+        🌟
+      </span>
+       
+      162004
+       - 
+       
+      <span
+        aria-label="fork"
+        role="img"
+      >
+        🍴
+      </span>
+       
+      32317
+    </li>
+  </ul>
+  <nav
+    aria-label="repo list navigation"
+    className="d-flex justify-content-center"
+  >
+    <ul
+      className="pagination"
+    >
+      <li
+        className="page-item disabled"
+      >
+        <span
+          className="page-link"
+        >
+          <span
+            aria-hidden="true"
+          >
+            «
+          </span>
+          <span
+            className="sr-only"
+          >
+            Previous
+          </span>
+        </span>
+      </li>
+      <li
+        className="page-item active"
+      >
+        <a
+          className="page-link"
+          href="/?page=1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          1
+        </a>
+      </li>
+      <li
+        className="page-item disabled"
+      >
+        <span
+          className="page-link"
+        >
+          <span
+            aria-hidden="true"
+          >
+            »
+          </span>
+          <span
+            className="sr-only"
+          >
+            Next
+          </span>
+        </span>
+      </li>
+    </ul>
+  </nav>
+</main>
+`;
