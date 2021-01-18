@@ -2,18 +2,22 @@ import Head from "next/head";
 
 const Home: React.FC = () => {
     return (
-        <div className={styles.container}>
+        <>
             <Head>
-                <title>Create Next App</title>
+                <title>Github react repos</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    Welcome to <a href="https://nextjs.org">Next.js!</a>
-                </h1>
+            <main className="container my-5">
+                <ul>
+                    <li>
+                        <a href="#">react</a> - {" "}
+                        <span role="img" aria-label="star">🌟</span> 999 - {" "}
+                        <span role="img" aria-label="fork">🍴</span> 999
+                    </li>
+                </ul>
             </main>
-        </div>
+        </>
     );
 };
 
